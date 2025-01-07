@@ -1,12 +1,18 @@
 import { Sidebar } from "./jsx/sideBar"
+import { Header } from "./jsx/header"
 
 
 export function App(){
 
     return (
 
-        <>
-            <Sidebar />
+        <>  
+            <div id="layOut">
+
+                <Sidebar />
+                
+            </div>
+
         </>
     )
 }

@@ -1,0 +1,38 @@
+
+
+#sideContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #464646;
+    height: 100vh;
+    width: auto;
+    margin: 0px;
+    color: white;
+    
+}
+
+#forms{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#formData{
+
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+input{
+
+    
+    width: 250px;
+    height: 25px;
+}
+
