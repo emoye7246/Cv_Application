@@ -1,0 +1,15 @@
+body{
+
+    display: flex;
+    margin: 0px;
+
+
+}
+
+.sidebar{
+
+    display: flex;
+    min-width: 30vw;
+    min-height: 100vh;
+    border: 1px solid black;
+}

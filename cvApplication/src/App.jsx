@@ -1,12 +1,11 @@
-import { Sidebar } from "./jsx/sideBar"
-
+import { Sidebar } from "./jsx/sidebar"
 
 export function App(){
 
     return (
 
         <>
-            <Sidebar />
+                <Sidebar />
         </>
     )
 }
