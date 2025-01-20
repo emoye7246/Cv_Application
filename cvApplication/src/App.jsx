@@ -1,12 +1,24 @@
-import '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/css/cvDisplay.css'
-
+import '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/css/style.css'
+import { Test } from './jsx/Components'
 
 export function App(){
 
+    let Hello =  (<Test />)
+
         return (
 
-            <>
-                <div>Hello</div>
-            </>
+            <div className="App">
+
+                <div className="Sidepanel">
+
+                    <Test prop={Hello} />
+
+                </div>
+
+                <div className="cvApp">
+
+                        <div>{Hello}</div>
+                </div>
+            </div>
         )
 }

@@ -1,0 +1,30 @@
+body{
+
+    margin: 0px;
+}
+
+.App{
+
+    display: flex;
+    flex-direction: row;
+}
+
+.Sidepanel{
+
+    display: flex;
+    border: 1px solid black;
+    height: 100vh;
+    width: 25vw;
+}
+
+.cvApp{
+
+    border: 1px solid black;
+    width: 75vw;
+    height: 100vh;
+}
+.hello{
+
+    display: flex;
+    flex-direction: column;
+}
