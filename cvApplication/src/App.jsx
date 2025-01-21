@@ -3,22 +3,13 @@ import { Test } from './jsx/Components'
 
 export function App(){
 
-    let Hello =  (<Test />)
+    return (
 
-        return (
+        <>
+            hELLO
+        </>
+    )
 
-            <div className="App">
 
-                <div className="Sidepanel">
 
-                    <Test prop={Hello} />
-
-                </div>
-
-                <div className="cvApp">
-
-                        <div>{Hello}</div>
-                </div>
-            </div>
-        )
 }
