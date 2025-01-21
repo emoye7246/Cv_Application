@@ -13,13 +13,14 @@ export function App(){
     const [phoneNumber, changeNumber] = useState('Provide Your Phone Number ')
     const [Address, changeAdress] = useState('Address Info')
     const [Education, changeEducation] = useState('Education')
+    const [Study, study] = useState('Study')
     
 
 
     const changeHeaderName = (e) => {
 
         changeName(e.target.value)
-        
+    
     }
 
     const changeOccupationName = (e) => {
@@ -43,6 +44,11 @@ export function App(){
         changeEducation(e.target.value)
     }
 
+    const Studies = (e) => {
+
+        study(e.target.value)
+    }
+
 
     return (
 
@@ -62,7 +68,7 @@ export function App(){
                             <input type="text" onChange={changeHeaderName} placeholder='John Doe'/>
 
                             <label htmlFor="Name">Email-Address</label>
-                            <input type="text" onChange={changeEmailName} placeholder='react@icloud.com'/>
+                            <input type='email' onChange={changeEmailName} placeholder='react@icloud.com'/>
                         </div>
 
                         <div className="labelStyle">
@@ -71,7 +77,7 @@ export function App(){
                             <input type="text" onChange={changeOccupationName} placeholder='Financial Advisor' id='Occupation'/>
 
                             <label htmlFor="Name">Phone Number</label>
-                            <input type="text" onChange={changePhoneNumber} placeholder='XXX-XXX-XXXX'/>
+                            <input type="tel" onChange={changePhoneNumber} placeholder='XXX-XXX-XXXX'/>
 
                         </div>
 
@@ -87,7 +93,7 @@ export function App(){
                                     <input type="text" onChange={changeEducationName}/>
 
                                     <label htmlFor="">Field of Study</label>
-                                    <input type="text"  />
+                                    <input type="text"  onChange={Studies}/>
                                 </div>
 
                                 <div className="eduLabel">
@@ -102,10 +108,6 @@ export function App(){
                             
                         </div>
 
-
-
-                        
-                
                 </div>
 
                 <div className="cvDisplay">
@@ -154,7 +156,9 @@ export function App(){
 
                                         <img src="" alt="" id='Icon' />
                                         <div>{Education}</div>
+                                        <div>{Study}</div>
                                     </div>
+
 
                                 </div>
 
