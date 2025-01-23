@@ -4,7 +4,6 @@ import '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src
 import mail from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/assets/Reference/envelope-solid.png'
 import phone from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/assets/Reference/phone-solid.png'
 import address from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/assets/Reference/maps-and-flags.png'
-
 import { useState } from 'react'
 import {Names, Occupation } from './jsx/Appcomponents'
 
@@ -37,7 +36,7 @@ export function App(){
                         <div>Name</div>
                         <input type="text" onChange={handleFunctions.Name} />
                     </label>
-
+                    {/* Maybe chane labels to componets */}
 
                 </div>
 

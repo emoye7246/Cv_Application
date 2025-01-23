@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-     
     export const Names = (prop) => {
 
      return(   
@@ -13,7 +12,7 @@ import { useState } from "react";
 
     }
 
-   export  const Occupation = (prop) => {
+   export const Occupation = (prop) => {
 
         return(   
             <>
