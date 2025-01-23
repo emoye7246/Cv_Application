@@ -19,6 +19,14 @@ body{
     margin: 0px;
 }
 
+label{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
 input{
 
     height: 28px;

@@ -12,23 +12,38 @@
     color: white;
 }
 
-.HeaderContent{
-
-    display: flex;
-    flex-direction: column;
-}
-
 #pfp{
 
     border: 1px solid black;
     border-radius: 30px;
 }
 
+.HeaderContent{
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+
 .sidePanel{
 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     height: 100vh;
     width: 25vw;
+    gap: 30px;
     border: 1px solid black;
+    background-color: antiquewhite;
 }
+
+.contactDetails {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+}
+

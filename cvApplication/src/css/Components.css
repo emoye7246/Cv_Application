@@ -1,7 +1,10 @@
-.HeaderInputs{
+.contacts{
 
     display: flex;
     flex-direction: row;
-    width: inherit;
+    align-items: flex-start;
     justify-content: space-evenly;
+    width: inherit;
+    gap: 40px;
+
 }

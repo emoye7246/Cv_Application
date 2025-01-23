@@ -1,6 +1,15 @@
-.Information, .contactDetails{
+.Information, .contactDetailsLabels{
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+}
+
+.myLabels{
 
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    gap: 18px;
 }

@@ -2,9 +2,6 @@ import '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src
 import '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/css/cvDisplay.css'
 import '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/css/Components.css'
 import '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/css/sidebar.css'
-import mail from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/assets/Reference/envelope-solid.png'
-import phone from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/assets/Reference/phone-solid.png'
-import address from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/assets/Reference/maps-and-flags.png'
 import { useState } from 'react'
 import { HeaderComponents, SidepanelComponents } from './jsx/Appcomponents'
 export function App(){
@@ -13,14 +10,18 @@ export function App(){
 
         Name: 'Name Here', 
         Occupation: 'Occupation Here', 
-        Email: 'Email Here'
+        Email: 'Email Here', 
+        Phone: 'Phone Number', 
+        Address: 'Address'
     })
 
     const handleFunctions = {
 
     Name: (e) => Updated({...input, Name: e.target.value}), 
     Occupation: (e) => Updated({...input, Occupation: e.target.value}), 
-    Email: (e) => Updated({...input, Email: e.target.value})
+    Email: (e) => Updated({...input, Email: e.target.value}), 
+    Phone: (e) => Updated({...input, Phone: e.target.value}), 
+    Address:  (e) => Updated({...input, Address: e.target.value})
 
     }
 
@@ -37,32 +38,55 @@ export function App(){
 
                     <div className="Information">
 
-                        <label htmlFor="">
-                            <div>Name</div>
-                            <input type="text" onChange={handleFunctions.Name} />
-                        </label>
+                        <div className="myLabels">
+                            <label htmlFor="">
+                                <div>Name</div>
+                                <input type="text" onChange={handleFunctions.Name} />
+                            </label>
 
 
-                        <label htmlFor="">
-                            <div>Occupation</div>
-                            <input type="text" onChange={handleFunctions.Occupation} />
-                        </label>
+                            <label htmlFor="">
+                                <div>Occupation</div>
+                                <input type="text" onChange={handleFunctions.Occupation} />
+                            </label>
+                        </div>
                     </div>
 
                     <h3>Contact Details</h3>
 
-                    <div className="contactDetails">
+                    <div className="contactDetailsLabels">
 
-                            <label htmlFor="">
+                        <div className='myLabels'>
+
+                            <label htmlFor="Email">
                                 <div>Email</div>
-                                <input type="text"  />
+                                <input type="email" name="Email" id="Email" onChange={handleFunctions.Email} required />
                             </label>
 
                             <label htmlFor="Phone">
                                 <div>Phone Number</div>
-                                <input type="tel" name="phone" id="Phone" placeholder='XXX-XXX-XXXX' />
+                                <input type="tel" name="phone" id="Phone" placeholder='XXX-XXX-XXXX' onChange={handleFunctions.Phone} />
                                 <div>(optional)</div>
                             </label>
+
+                        </div>
+
+                        <div className='myLabels'>
+                            
+                            <label htmlFor="Address">
+                                <div>Address</div>
+                                <input type="text" name='Address' onChange={handleFunctions.Address} />
+                            </label>
+
+                            <label htmlFor="Address">
+                                <div>Website</div>
+                                <input type="text" name='Address' onChange={handleFunctions.Address} />
+                            </label>
+
+
+                        </div>
+
+                            
                     </div>
 
                 </div>
@@ -85,6 +109,12 @@ export function App(){
                     <div className="sidePanel">
 
                         <h3>Contact Details</h3>
+
+                        <div className='contactDetails'>
+                            {new SidepanelComponents().Email(input.Email)}
+                            {new SidepanelComponents().Phone(input.Phone)}
+                            {new SidepanelComponents().Address(input.Address)}
+                        </div>
 
 
                     </div>
