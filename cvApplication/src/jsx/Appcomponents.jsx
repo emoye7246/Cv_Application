@@ -1,28 +1,53 @@
 import { useState } from "react";
 
-    export const Names = (prop) => {
+    export class HeaderComponents{
+    
+    Names = (prop) => {
 
      return(   
         <>
 
-            <h3>{prop.Name}</h3>
+            <h3>{prop}</h3>
             
         </>
      )
 
     }
 
-   export const Occupation = (prop) => {
+    Occupation = (prop) => {
 
         return(   
             <>
-                <div>{prop.Occupation}</div>
+                <div>{prop}</div>
             </>
          )
 
     }
+    }
 
+    export class SidepanelComponents {
+
+    Email = (prop) => {
+
+    return(   
+        <>
+            <div>{prop}</div>
+        </>
+     )
+
+    }
+
+    Phone = (prop) => {
+
+        return(   
+            <>
+                <div>{prop}</div>
+            </>
+         )
+    
+        }
+    }
     
 
 
-
+    
