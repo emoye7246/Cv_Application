@@ -1,9 +1,16 @@
-.Information, .contactDetailsLabels{
+.Information, .contactDetailsLabels, .EducationLabels{
 
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 18px;
 
+}
+
+.Addedu{
+
+    display: flex;
+    align-items: center;
 }
 
 .myLabels{

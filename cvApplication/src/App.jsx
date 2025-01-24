@@ -3,7 +3,7 @@ import '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src
 import '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/css/Components.css'
 import '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/css/sidebar.css'
 import { useState } from 'react'
-import { HeaderComponents, SidepanelComponents } from './jsx/Appcomponents'
+import { HeaderComponents, Contact, Education} from './jsx/Appcomponents'
 export function App(){
 
     const [input, Updated] = useState({
@@ -12,7 +12,8 @@ export function App(){
         Occupation: 'Occupation Here', 
         Email: 'Email Here', 
         Phone: 'Phone Number', 
-        Address: 'Address'
+        Address: 'Address', 
+        Website: 'Url...'
     })
 
     const handleFunctions = {
@@ -21,7 +22,8 @@ export function App(){
     Occupation: (e) => Updated({...input, Occupation: e.target.value}), 
     Email: (e) => Updated({...input, Email: e.target.value}), 
     Phone: (e) => Updated({...input, Phone: e.target.value}), 
-    Address:  (e) => Updated({...input, Address: e.target.value})
+    Address:  (e) => Updated({...input, Address: e.target.value}), 
+    Website: (e) => Updated({...input, Website: e.target.value})
 
     }
 
@@ -80,14 +82,26 @@ export function App(){
 
                             <label htmlFor="Address">
                                 <div>Website</div>
-                                <input type="text" name='Address' onChange={handleFunctions.Address} />
+                                <input type="text" name='Address' onChange={handleFunctions.Website} />
                             </label>
 
 
                         </div>
+                        
 
                             
                     </div>
+
+                    <h3>Education</h3>
+
+                    <div className="EducationLabels">
+
+                        {new Education().EducationLabel()}
+
+
+                        <button className="Addedu">Add Education</button>
+                    </div>
+
 
                 </div>
 
@@ -111,10 +125,19 @@ export function App(){
                         <h3>Contact Details</h3>
 
                         <div className='contactDetails'>
-                            {new SidepanelComponents().Email(input.Email)}
-                            {new SidepanelComponents().Phone(input.Phone)}
-                            {new SidepanelComponents().Address(input.Address)}
+                            {new Contact().Email(input.Email)}
+                            {new Contact().Phone(input.Phone)}
+                            {new Contact().Address(input.Address)}
+                            {new Contact().Website(input.Website)}
                         </div>
+
+                        <h3>Education</h3>
+
+                        <div className="educationDetails">
+                            <div>Hello</div>
+                        </div>
+
+
 
 
                     </div>
