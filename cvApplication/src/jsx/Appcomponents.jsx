@@ -2,7 +2,6 @@ import mail from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvAppli
 import phone from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/assets/Reference/phone-solid.png'
 import address from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/assets/Reference/maps-and-flags.png'
 import url from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/assets/Reference/url.png'
-import { useState } from 'react'
 
     export const HeaderComponents = ({Name, Occupation}) => {
 
@@ -88,7 +87,6 @@ import { useState } from 'react'
         return (   
 
             <>
-                <h3>Contact Details</h3>
 
                 <div className='contactDetails'>
 
@@ -125,7 +123,6 @@ import { useState } from 'react'
             return (
 
                 <>
-
                         <div className="EducationLabels">
 
                             <div className='myLabels'>
@@ -158,7 +155,7 @@ import { useState } from 'react'
 
                 </>
             )
-        }
+    }
 
 
 
@@ -167,7 +164,6 @@ import { useState } from 'react'
             return (
 
                 <>
-                    <h3>Education</h3>
 
                         <div className="educationDetails">
                             <div><strong>{schoolName}</strong></div>
@@ -177,11 +173,11 @@ import { useState } from 'react'
                    
                 </>
             )
-        }
+    }
 
 
 
-    export function Summaries(){
+    export function SummaryLabel(){
 
 
         return (

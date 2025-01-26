@@ -31,7 +31,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 75vh;
     width: 30vw;
     gap: 30px;
     border: 1px solid black;
@@ -42,6 +41,8 @@
 
     display: flex;
     flex-direction: row;
+    height: 100vh;
+
 }
 
 .cvRight{
@@ -49,7 +50,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 75vh;
     width: 70vw;
     gap: 30px;
     border: 1px solid black;

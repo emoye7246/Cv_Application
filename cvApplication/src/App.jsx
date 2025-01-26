@@ -3,9 +3,10 @@ import '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src
 import '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/css/Components.css'
 import '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/css/sidebar.css'
 import { useState } from 'react'
-import { HeaderComponents, Summaries, EducationLabel, EducationDisplay, HeaderPage, ContactComponents, ContactPage} from './jsx/Appcomponents'
+import { HeaderComponents, EducationLabel, EducationDisplay, HeaderPage, ContactComponents, ContactPage, SummaryLabel} from './jsx/Appcomponents'
 export function App(){
 
+    // Inputs
     const [input, Updated] = useState({
 
         Name: 'Name Here', 
@@ -16,7 +17,6 @@ export function App(){
         Website: 'Url...'
     })
 
-    
 
     const handleFunctions = {
 
@@ -29,12 +29,16 @@ export function App(){
 
     }
 
+    // Education Info
+
     const [Educationinfo, updatedEdu] = useState({
 
         School: 'School Name', 
         Field: 'Field of Study', 
         Start: 'Start Term', 
         End: 'End Term', 
+
+        addEducation: []
 
     })
 
@@ -44,6 +48,9 @@ export function App(){
         Field: (e) => updatedEdu({...Educationinfo, Field: e.target.value}),
         Start: (e) => updatedEdu({...Educationinfo, Start: e.target.value}), 
         End: (e) => updatedEdu({...Educationinfo, End: e.target.value}),
+
+
+        addEducation: ''
 
 
     }
@@ -71,6 +78,8 @@ export function App(){
                     
                        <EducationLabel Educations={handleEducation.School} Field={handleEducation.Field} Start={handleEducation.Start} End={handleEducation.End} />
 
+                       {Educationinfo.addEducation.map((label) => ( <EducationLabel Educations={handleEducation.School} Field={handleEducation.Field} Start={handleEducation.Start} End={handleEducation.End} />))}
+
 
                     <h3>Skills</h3>
 
@@ -78,7 +87,7 @@ export function App(){
 
                     <div className="SummaryLabels">
 
-                        <Summaries />
+                        <SummaryLabel />
 
                     </div>
 
@@ -109,9 +118,16 @@ export function App(){
 
                         <div className="sidePanel">
 
+                        <h3>Contact Details</h3>
+
                             <ContactPage Email={input.Email} Phone={input.Phone} Address={input.Address} Website={input.Website}/>
 
+                        <h3>Education</h3>
+                        
                             <EducationDisplay schoolName={Educationinfo.School} field={Educationinfo.Field} startTerm={Educationinfo.Start} endTerm={Educationinfo.End}/>
+
+                            {Educationinfo.addEducation.map((label) => (<EducationDisplay schoolName={Educationinfo.School} field={Educationinfo.Field} startTerm={Educationinfo.Start} endTerm={Educationinfo.End}/>))}
+
 
                         </div>
 
