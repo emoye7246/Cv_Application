@@ -3,7 +3,7 @@ import '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src
 import '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/css/Components.css'
 import '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/css/sidebar.css'
 import { useState } from 'react'
-import { HeaderComponents, Contact, Education} from './jsx/Appcomponents'
+import { HeaderComponents, Summaries, EducationLabel, EducationDisplay, HeaderPage, ContactComponents, ContactPage} from './jsx/Appcomponents'
 export function App(){
 
     const [input, Updated] = useState({
@@ -16,6 +16,8 @@ export function App(){
         Website: 'Url...'
     })
 
+    
+
     const handleFunctions = {
 
     Name: (e) => Updated({...input, Name: e.target.value}), 
@@ -26,6 +28,27 @@ export function App(){
     Website: (e) => Updated({...input, Website: e.target.value})
 
     }
+
+    const [Educationinfo, updatedEdu] = useState({
+
+        School: 'School Name', 
+        Field: 'Field of Study', 
+        Start: 'Start Term', 
+        End: 'End Term', 
+
+    })
+
+    const handleEducation = {
+
+        School: (e) => updatedEdu({...Educationinfo, School: e.target.value}),
+        Field: (e) => updatedEdu({...Educationinfo, Field: e.target.value}),
+        Start: (e) => updatedEdu({...Educationinfo, Start: e.target.value}), 
+        End: (e) => updatedEdu({...Educationinfo, End: e.target.value}),
+
+
+    }
+
+
 
     return (
 
@@ -38,69 +61,30 @@ export function App(){
 
                     <h3>Information</h3>
 
-                    <div className="Information">
-
-                        <div className="myLabels">
-                            <label htmlFor="">
-                                <div>Name</div>
-                                <input type="text" onChange={handleFunctions.Name} />
-                            </label>
-
-
-                            <label htmlFor="">
-                                <div>Occupation</div>
-                                <input type="text" onChange={handleFunctions.Occupation} />
-                            </label>
-                        </div>
-                    </div>
+                        <HeaderComponents Name={handleFunctions.Name} Occupation={handleFunctions.Occupation} />
 
                     <h3>Contact Details</h3>
 
-                    <div className="contactDetailsLabels">
-
-                        <div className='myLabels'>
-
-                            <label htmlFor="Email">
-                                <div>Email</div>
-                                <input type="email" name="Email" id="Email" onChange={handleFunctions.Email} required />
-                            </label>
-
-                            <label htmlFor="Phone">
-                                <div>Phone Number</div>
-                                <input type="tel" name="phone" id="Phone" placeholder='XXX-XXX-XXXX' onChange={handleFunctions.Phone} />
-                                <div>(optional)</div>
-                            </label>
-
-                        </div>
-
-                        <div className='myLabels'>
-                            
-                            <label htmlFor="Address">
-                                <div>Address</div>
-                                <input type="text" name='Address' onChange={handleFunctions.Address} />
-                            </label>
-
-                            <label htmlFor="Address">
-                                <div>Website</div>
-                                <input type="text" name='Address' onChange={handleFunctions.Website} />
-                            </label>
-
-
-                        </div>
+                        <ContactComponents Email={handleFunctions.Email} Phone={handleFunctions.Phone} Address={handleFunctions.Address} Website={handleFunctions.Website}/>
                         
-
-                            
-                    </div>
-
                     <h3>Education</h3>
-
-                    <div className="EducationLabels">
-
-                        {new Education().EducationLabel()}
+                    
+                       <EducationLabel Educations={handleEducation.School} Field={handleEducation.Field} Start={handleEducation.Start} End={handleEducation.End} />
 
 
-                        <button className="Addedu">Add Education</button>
+                    <h3>Skills</h3>
+
+                    <h3>Summary</h3>
+
+                    <div className="SummaryLabels">
+
+                        <Summaries />
+
                     </div>
+
+                    <h3>Work Experience</h3>
+
+                    <h3>Refrences</h3>
 
 
                 </div>
@@ -114,36 +98,31 @@ export function App(){
                         </div>
 
                         <div className="HeaderContent">
-                            {new HeaderComponents().Names(input.Name)}
-                            {new HeaderComponents().Occupation(input.Occupation)}
+
+                            <HeaderPage Name={input.Name} Occupation={input.Occupation} />
+
                         </div>
 
                     </div>
 
-                    <div className="sidePanel">
+                    <div className="cvBody">
 
-                        <h3>Contact Details</h3>
+                        <div className="sidePanel">
 
-                        <div className='contactDetails'>
-                            {new Contact().Email(input.Email)}
-                            {new Contact().Phone(input.Phone)}
-                            {new Contact().Address(input.Address)}
-                            {new Contact().Website(input.Website)}
+                            <ContactPage Email={input.Email} Phone={input.Phone} Address={input.Address} Website={input.Website}/>
+
+                            <EducationDisplay schoolName={Educationinfo.School} field={Educationinfo.Field} startTerm={Educationinfo.Start} endTerm={Educationinfo.End}/>
+
                         </div>
 
-                        <h3>Education</h3>
+                        <div className="cvRight">
 
-                        <div className="educationDetails">
                             <div>Hello</div>
+
                         </div>
-
-
-
-
                     </div>
 
                     
-
                 </div>
             </div>
         </>

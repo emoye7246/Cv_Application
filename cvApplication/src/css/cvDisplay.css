@@ -27,16 +27,35 @@
 
 
 .sidePanel{
-
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
-    width: 25vw;
+    height: 75vh;
+    width: 30vw;
     gap: 30px;
     border: 1px solid black;
     background-color: antiquewhite;
 }
+
+.cvBody{
+
+    display: flex;
+    flex-direction: row;
+}
+
+.cvRight{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 75vh;
+    width: 70vw;
+    gap: 30px;
+    border: 1px solid black;
+}
+
+
 
 .contactDetails {
 

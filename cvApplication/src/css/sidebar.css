@@ -1,4 +1,4 @@
-.Information, .contactDetailsLabels, .EducationLabels{
+.Information, .contactDetailsLabels, .EducationLabels, .SkillLabels{
 
     display: flex;
     flex-direction: column;
@@ -7,16 +7,18 @@
 
 }
 
-.Addedu{
-
-    display: flex;
-    align-items: center;
-}
 
 .myLabels{
 
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    gap: 18px;
+    gap: 40px;
+}
+
+.Addedu{
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }

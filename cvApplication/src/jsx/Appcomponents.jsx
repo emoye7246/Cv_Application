@@ -2,146 +2,204 @@ import mail from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvAppli
 import phone from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/assets/Reference/phone-solid.png'
 import address from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/assets/Reference/maps-and-flags.png'
 import url from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/assets/Reference/url.png'
+import { useState } from 'react'
 
-    export class HeaderComponents{
-    
-    Names = (prop) => {
+    export const HeaderComponents = ({Name, Occupation}) => {
 
-     return(   
-        <>
+        return (
 
-            <h3>{prop}</h3>
-            
-        </>
-     )
-
-    }
-
-    Occupation = (prop) => {
-
-        return(   
             <>
-                <div>{prop}</div>
+                    <div className="Information">
+
+                        <div className="myLabels">
+                            <label htmlFor="">
+                                <div>Name</div>
+                                <input type="text" onChange={Name} />
+                            </label>
+
+
+                            <label htmlFor="">
+                                <div>Occupation</div>
+                                <input type="text" onChange={Occupation} />
+                            </label>
+                        </div>
+                    </div>
             </>
-         )
-
-    }
+        )
     }
 
-    export class Contact {
+    export const HeaderPage = ({Name, Occupation}) => {
+        
+        return (
 
-    Email = (prop) => {
+            <>
+                <div className="HeaderContent">
+
+                    <h3>{Name}</h3>
+                    <div>{Occupation}</div>
+                </div>
+            </>
+        )
+    }
+
+    export const ContactComponents = ({Email, Phone, Address, Website}) => {
+
+        return (
+
+            <>  
+
+                    <div className="contactDetailsLabels">
+
+                        <div className='myLabels'>
+
+                            <label htmlFor="Email">
+                                <div>Email</div>
+                                <input type="email" name="Email" id="Email" onChange={Email} required />
+                            </label>
+
+                            <label htmlFor="Phone">
+                                <div>Phone Number</div>
+                                <input type="tel" name="phone" id="Phone" placeholder='XXX-XXX-XXXX' onChange={Phone} />
+                                <div>(optional)</div>
+                            </label>
+
+                        </div>
+
+                        <div className='myLabels'>
+
+                            <label htmlFor="Address">
+                                <div>Address</div>
+                                <input type="text" name='Address' onChange={Address} />
+                            </label>
+
+                            <label htmlFor="Website">
+                                <div>Website</div>
+                                <input type="url" name="Website" id="Website" onChange={Website} />
+                            </label>
+
+                        </div>
+                    </div>
+            </>
+        )
+    }
+
+    export const ContactPage = ({Email, Phone, Address, Website}) => {
 
         return (   
 
             <>
-                <div className="contacts">
-                    <img src={mail} alt="" height={'20px'} width={'20px'}/>
-                    <div>{prop}</div>
+                <h3>Contact Details</h3>
+
+                <div className='contactDetails'>
+
+                    <div className="contacts">
+                        <img src={mail} alt="" height={'20px'} width={'20px'}/>
+                        <div>{Email}</div>
+                    </div>
+
+                    <div className="contacts">
+                        <img src={phone} alt="" height={'20px'} width={'20px'}/>
+                        <div>{Phone}</div>
+                    </div>
+
+                    <div className="contacts">
+                        <img src={address} alt="" height={'20px'} width={'20px'}/>
+                        <div>{Address}</div>
+                    </div>
+
+                    <div className="contacts">
+                        <img src={url} alt="" height={'20px'} width={'20px'}/>
+                        <div>{Website}</div>
+                    </div>
                 </div>
+
+
             </>
         
         )
 
     }
 
-    Phone = (prop) => {
-
-        return (   
-
-            <>
-                <div className="contacts">
-                    <img src={phone} alt="" height={'20px'} width={'20px'}/>
-                    <div>{prop}</div>
-                </div>
-            </>
-        
-         )
-    
-        }
-
-    Address = (prop) => {
-
-        return (
-            <>
-                <div className="contacts">
-                    <img src={address} alt="" height={'20px'} width={'20px'}/>
-                    <div>{prop}</div>
-                </div>
-            </>
-        )
-    }
-
-    Website = (prop) => {
-
-
-        return (
-            <>
-                <div className="contacts">
-                    <img src={url} alt="" height={'20px'} width={'20px'}/>
-                    <div>{prop}</div>
-                </div>
-            </>
-        )
-
-    }
-    }
-
-    export class Education{
-
-        constructor(prop){
-
-            this.prop = prop
-        }
-
-        EducationLabel = (handleChange) => {
+     export  const  EducationLabel = ({Educations, Field, Start, End}) => {
 
             return (
 
                 <>
-                    <div className='myLabels'>
+
+                        <div className="EducationLabels">
+
+                            <div className='myLabels'>
                         
-                        <label htmlFor="Education">
+                                <label htmlFor="Education">
                             <div>School Name</div>
-                            <input type="text" onChange={handleChange} />
-                        </label>
+                            <input type="text" onChange={Educations} />
+                                </label>
 
-                        <label htmlFor="Field">
-                            <div>Field of Study</div>
-                            <input type="text" name="Field" id="Field" onChange={handleChange} />
-                        </label>
-                    </div>
+                                <label htmlFor="Field">
+                                    <div>Field of Study</div>
+                                    <input type="text" name="Field" id="Field" onChange={Field} />
+                                </label>
+                            </div>
 
-                    <div className='myLabels'>
+                            <div className='myLabels'>
 
-                        <label htmlFor="Start">
-                            <div>Start Term</div>
-                            <input type="number" name="Start" id="Start" onChange={handleChange} />
-                        </label>
+                                <label htmlFor="Start">
+                                    <div>Start Term</div>
+                                    <input type="number" name="Start" id="Start" onChange={Start} max={2025}/>
+                                </label>
 
-                        <label htmlFor="End">
-                            <div>Start Term</div>
-                            <input type="number" name="End" id="End" onChange={handleChange} />
-                        </label>
+                                <label htmlFor="End">
+                                    <div>End Term</div>
+                                    <input type="number" name="End" id="End" onChange={End} max={2025}/>
+                                </label>
 
-                    </div>
+                            </div>
+                        </div>
+
                 </>
             )
         }
 
-        EducationDisplay = ({schoolName, field, startTerm, endTerm}) => {
+
+
+      export const  EducationDisplay = ({schoolName, field, startTerm, endTerm}) => {
 
             return (
 
                 <>
-                    <div>{schoolName}</div>
-                    <div>{field}</div>
-                    <div>{startTerm}</div>
-                    <div>{endTerm}</div>
+                    <h3>Education</h3>
+
+                        <div className="educationDetails">
+                            <div><strong>{schoolName}</strong></div>
+                            <div>{field}</div>
+                            <div>{startTerm} - {endTerm}</div>
+                        </div>
+                   
                 </>
             )
         }
+
+
+
+    export function Summaries(){
+
+
+        return (
+
+            <>
+                <div className="myLabels">
+                    
+                    <label htmlFor="Summary">
+                        <textarea name="Summary" id="Summary" rows='10' cols='40'></textarea>
+                    </label>
+                </div>
+            </>
+        )
+
     }
+
+    
+    
     
 
 

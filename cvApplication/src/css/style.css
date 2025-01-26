@@ -27,7 +27,7 @@ label{
 
 }
 
-input{
+input, select{
 
     height: 28px;
     width: 140px;
@@ -41,6 +41,11 @@ h3, h1{
 
     display: flex;
     justify-content: center;
+}
+
+strong{
+
+    font-size: large;
 }
 
 .App{
