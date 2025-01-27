@@ -13,13 +13,13 @@ import url from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplic
                         <div className="myLabels">
                             <label htmlFor="">
                                 <div>Name</div>
-                                <input type="text" onChange={Name} />
+                                <input type="text" placeholder='John Doe' onChange={Name} />
                             </label>
 
 
                             <label htmlFor="">
                                 <div>Occupation</div>
-                                <input type="text" onChange={Occupation} />
+                                <input type="text" placeholder='Finacial Advisor' onChange={Occupation} />
                             </label>
                         </div>
                     </div>
@@ -175,23 +175,109 @@ import url from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplic
             )
     }
 
+    export const SkillLabels = ({Skill, Level}) => {
 
+        return (
+            <>
+                <div className="SkillLabels">
 
-    export function SummaryLabel(){
+                        <div className="myLabels">
+                            <label htmlFor="Skills">
+                                <div>Skills</div>
+                                <input type="text" name='Skills' placeholder='Skill' onChange={Skill}/>
+                            </label>
+
+                            <label htmlFor="level">
+                                <div>Level</div>
+                                <select name="level" id="level" onChange={Level}>
+                                    <option value="Beginner">Beginner</option>
+                                    <option value="Intermediate">Intermediate</option>
+                                    <option value="Expert">Expert</option>
+                                </select>
+                            </label>
+                        </div>
+                </div>
+            </>
+        )
+
+    }
+
+    export const SkillsPage = ({Skill, Level}) => {
+
+        return (
+
+            <>
+                <div className="SkillDetails">
+
+                    <div className="displaySkills">
+
+                            <div>{Skill} - {Level}</div>
+                    </div>
+
+                </div>
+            </>
+        )
+    }
+
+    export const SummaryLabel = () => {
 
 
         return (
 
             <>
-                <div className="myLabels">
+                <div className="SummaryLabels">
+
+                    <div className="myLabels">
                     
-                    <label htmlFor="Summary">
-                        <textarea name="Summary" id="Summary" rows='10' cols='40'></textarea>
-                    </label>
+                        <label htmlFor="Summary">
+                            <textarea name="Summary" id="Summary" rows='10' cols='40'></textarea>
+                        </label>
+                    </div>
                 </div>
             </>
         )
+    }
+    
 
+    export const SummaryPage = () => {
+
+        const style = {
+
+            display: 'flex',
+            justifyContent: 'flex-start',
+            width: '600px',
+            borderBottom: '1px solid black'
+        }
+
+        const styleBox = {
+
+            width: '600px', 
+            height: '150px',
+            border: '1px solid black'
+
+        }
+
+        return (
+
+            <>
+                <div className="SummaryDetails">
+
+                    <h3 style={style}>Summary</h3>
+
+                         <div style={styleBox}></div>
+                         
+
+                    <h3 style={style}>Work Experience</h3>
+
+                        <div style={styleBox}></div>
+
+                    <h3 style={style}>References</h3>
+
+                        <div style={styleBox}></div>
+                    
+                </div>
+            </>
+        )
     }
 
     

@@ -58,21 +58,25 @@ strong{
 
     display: flex;
     flex-direction: column;
+    align-items: center;
     position: relative;
     overflow-x: scroll;
     row-gap: 20px;
     border: 1px solid black;
+    border-bottom: none;
     width: 25vw;
     height: 100vh;
 
 }
 
 .cvDisplay{
+    position: relative;
+    overflow-x: scroll;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
     width: 75vw;
     height: 100vh;
+
 }
 
 

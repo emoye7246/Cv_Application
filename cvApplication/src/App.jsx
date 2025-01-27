@@ -3,7 +3,7 @@ import '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src
 import '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/css/Components.css'
 import '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/css/sidebar.css'
 import { useState } from 'react'
-import { HeaderComponents, EducationLabel, EducationDisplay, HeaderPage, ContactComponents, ContactPage, SummaryLabel} from './jsx/Appcomponents'
+import { HeaderComponents, EducationLabel, EducationDisplay, HeaderPage, ContactComponents, ContactPage, SummaryLabel, SkillLabels, SkillsPage, SummaryPage} from './jsx/Appcomponents'
 export function App(){
 
     // Inputs
@@ -49,9 +49,35 @@ export function App(){
         Start: (e) => updatedEdu({...Educationinfo, Start: e.target.value}), 
         End: (e) => updatedEdu({...Educationinfo, End: e.target.value}),
 
+        AddEdu: () => {
 
-        addEducation: ''
+            
 
+            const newDiv = {id: Educationinfo.addEducation.length + 1}
+            updatedEdu((prevEdu) => ({
+
+                ...prevEdu, addEducation: [...prevEdu.addEducation, newDiv]
+            }))
+        }
+
+    }
+
+    // SkillsInfo
+
+    const [SkillInfo, updateSkills] = useState({
+
+        SkillName: 'Skill', 
+        SkillLevel: 'Beginner', 
+
+        addSkill: []
+    })
+
+    const handleSkills = {
+
+        SkillName: (e) => updateSkills({...SkillInfo, SkillName: e.target.value}), 
+        SkillLevel: (e) => updateSkills({...SkillInfo, SkillLevel: e.target.value}), 
+
+        addSkill: ''
 
     }
 
@@ -78,18 +104,24 @@ export function App(){
                     
                        <EducationLabel Educations={handleEducation.School} Field={handleEducation.Field} Start={handleEducation.Start} End={handleEducation.End} />
 
-                       {Educationinfo.addEducation.map((label) => ( <EducationLabel Educations={handleEducation.School} Field={handleEducation.Field} Start={handleEducation.Start} End={handleEducation.End} />))}
+                       {Educationinfo.addEducation.map((label) => ( <EducationLabel Educations={handleEducation.School} Field={handleEducation.Field} Start={handleEducation.Start} End={handleEducation.End} key={label.id}/>))}
+
+                       <button onClick={handleEducation.AddEdu}>Add Education</button>
 
 
                     <h3>Skills</h3>
 
+                        <SkillLabels  Skill={handleSkills.SkillName} Level={handleSkills.SkillLevel}/>
+
+                        {SkillInfo.addSkill.map((skill) => (<SkillLabels Skill={handleSkills.SkillName} Level={handleSkills.SkillLevel}/>))}
+
+                        <button>Add Skill</button>
+
+
                     <h3>Summary</h3>
 
-                    <div className="SummaryLabels">
 
                         <SummaryLabel />
-
-                    </div>
 
                     <h3>Work Experience</h3>
 
@@ -126,14 +158,17 @@ export function App(){
                         
                             <EducationDisplay schoolName={Educationinfo.School} field={Educationinfo.Field} startTerm={Educationinfo.Start} endTerm={Educationinfo.End}/>
 
-                            {Educationinfo.addEducation.map((label) => (<EducationDisplay schoolName={Educationinfo.School} field={Educationinfo.Field} startTerm={Educationinfo.Start} endTerm={Educationinfo.End}/>))}
+                            {Educationinfo.addEducation.map((label) => (<EducationDisplay schoolName={Educationinfo.School} field={Educationinfo.Field} startTerm={Educationinfo.Start} endTerm={Educationinfo.End} key={label.id}/>))}
+                        <h3>Skills</h3>
 
+                            <SkillsPage Skill={SkillInfo.SkillName} Level={SkillInfo.SkillLevel}/>
 
+                            {SkillInfo.addSkill.map((skill) => (<SkillsPage Skill={SkillInfo.SkillName} Level={SkillInfo.SkillLevel}/>))}
                         </div>
 
                         <div className="cvRight">
 
-                            <div>Hello</div>
+                            <SummaryPage />
 
                         </div>
                     </div>
