@@ -2,6 +2,7 @@ import mail from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvAppli
 import phone from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/assets/Reference/phone-solid.png'
 import address from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/assets/Reference/maps-and-flags.png'
 import url from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplication/src/assets/Reference/url.png'
+import { useState } from 'react'
 
     export const HeaderComponents = ({Name, Occupation}) => {
 
@@ -34,7 +35,7 @@ import url from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplic
             <>
                 <div className="HeaderContent">
 
-                    <h3>{Name}</h3>
+                    <h2>{Name}</h2>
                     <div>{Occupation}</div>
                 </div>
             </>
@@ -118,46 +119,6 @@ import url from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplic
 
     }
 
-     export  const  EducationLabel = ({Educations, Field, Start, End}) => {
-
-            return (
-
-                <>
-                        <div className="EducationLabels">
-
-                            <div className='myLabels'>
-                        
-                                <label htmlFor="Education">
-                            <div>School Name</div>
-                            <input type="text" onChange={Educations} />
-                                </label>
-
-                                <label htmlFor="Field">
-                                    <div>Field of Study</div>
-                                    <input type="text" name="Field" id="Field" onChange={Field} />
-                                </label>
-                            </div>
-
-                            <div className='myLabels'>
-
-                                <label htmlFor="Start">
-                                    <div>Start Term</div>
-                                    <input type="number" name="Start" id="Start" onChange={Start} max={2025}/>
-                                </label>
-
-                                <label htmlFor="End">
-                                    <div>End Term</div>
-                                    <input type="number" name="End" id="End" onChange={End} max={2025}/>
-                                </label>
-
-                            </div>
-                        </div>
-
-                </>
-            )
-    }
-
-
 
       export const  EducationDisplay = ({schoolName, field, startTerm, endTerm}) => {
 
@@ -175,32 +136,6 @@ import url from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplic
             )
     }
 
-    export const SkillLabels = ({Skill, Level}) => {
-
-        return (
-            <>
-                <div className="SkillLabels">
-
-                        <div className="myLabels">
-                            <label htmlFor="Skills">
-                                <div>Skills</div>
-                                <input type="text" name='Skills' placeholder='Skill' onChange={Skill}/>
-                            </label>
-
-                            <label htmlFor="level">
-                                <div>Level</div>
-                                <select name="level" id="level" onChange={Level}>
-                                    <option value="Beginner">Beginner</option>
-                                    <option value="Intermediate">Intermediate</option>
-                                    <option value="Expert">Expert</option>
-                                </select>
-                            </label>
-                        </div>
-                </div>
-            </>
-        )
-
-    }
 
     export const SkillsPage = ({Skill, Level}) => {
 
@@ -219,7 +154,7 @@ import url from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplic
         )
     }
 
-    export const SummaryLabel = () => {
+    export const SummaryLabel = ({Summary, Work, References}) => {
 
 
         return (
@@ -230,16 +165,42 @@ import url from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplic
                     <div className="myLabels">
                     
                         <label htmlFor="Summary">
-                            <textarea name="Summary" id="Summary" rows='10' cols='40'></textarea>
+                            <textarea name="Summary" id="Summary" rows='10' cols='40' onChange={Summary} placeholder='Give a breif intro about yourself'></textarea>
                         </label>
                     </div>
                 </div>
+
+                <h3>Work Experience</h3>
+
+                    <div className="SummaryLabels">
+
+                        <div className="myLabels">
+                    
+                            <label htmlFor="Work Experience">
+                                <textarea name="Summary" id="Summary" rows='10' cols='40' onChange={Work} placeholder='Tell us some prior Work Experiences'></textarea>
+                            </label>
+                        </div>
+                    </div>
+
+
+                <h3>Refrences</h3>
+
+                    <div className="SummaryLabels">
+
+                        <div className="myLabels">
+                    
+                            <label htmlFor="References">
+                                <textarea name="References" id="References" rows='10' cols='40' onChange={References} placeholder='Please provide any References if any'></textarea>
+                            </label>
+                        </div>
+                    </div>
+
             </>
         )
     }
     
 
-    export const SummaryPage = () => {
+    export const SummaryPage = ({Summary, Work, References}) => {
 
         const style = {
 
@@ -264,16 +225,28 @@ import url from '/Users/elijahmoye/Desktop/cvApplication/Cv_Application/cvApplic
 
                     <h3 style={style}>Summary</h3>
 
-                         <div style={styleBox}></div>
+                         <div style={styleBox}>
+
+                            <div>{Summary}</div>
+
+                         </div>
                          
 
                     <h3 style={style}>Work Experience</h3>
 
-                        <div style={styleBox}></div>
+                        <div style={styleBox}>
+
+                            <div>{Work}</div>
+
+                        </div>
 
                     <h3 style={style}>References</h3>
 
-                        <div style={styleBox}></div>
+                        <div style={styleBox}>
+
+                            <div>{References}</div>
+
+                        </div>
                     
                 </div>
             </>
